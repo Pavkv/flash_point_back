@@ -1,4 +1,4 @@
-# Flash Point Front-End
+# Flash Point Back-End
 
 Flash Point is a Node.js + Express.js backend for a news aggregation app that allows users to register, log in, save news articles, and retrieve personalized content. It communicates with a frontend client and external APIs such as [News API](https://newsapi.org/).
 
