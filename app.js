@@ -10,9 +10,9 @@ const NotFoundError = require('./utils/Errors/NotFoundError');
 const rateLimiter = require('./middlewares/rateLimiter');
 const CorsError = require("./utils/Errors/CorsError");
 
-const { PORT = 3001, ALLOWEDORIGINS = 'http://localhost:3000' } = process.env;
+const { PORT = 3002, ALLOWED_ORIGINS = 'http://localhost:3000' } = process.env;
 
-const allowedOrigins = ALLOWEDORIGINS.split(',');
+const allowedOrigins = ALLOWED_ORIGINS.split(',');
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
@@ -39,6 +39,7 @@ app.use(requestLogger);
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
+app.use('/articles', require('./routes/articles'));
 
 app.use((req, res, next) => next(new NotFoundError('Requested resource not found')));
 
