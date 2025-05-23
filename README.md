@@ -78,7 +78,7 @@ This project is licensed under the [ISC License](LICENSE).
 ## 👨‍💻 Author
 
 [Pasha Zobov](https://github.com/Pavkv)
-2025 © WTWR
+2025 © FLASH POINT
 
 ---
 
