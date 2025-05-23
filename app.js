@@ -10,9 +10,12 @@ const NotFoundError = require('./utils/Errors/NotFoundError');
 const rateLimiter = require('./middlewares/rateLimiter');
 const CorsError = require("./utils/Errors/CorsError");
 
-const { PORT = 3002, ALLOWED_ORIGINS = 'http://localhost:3000' } = process.env;
+const { PORT = 3002} = process.env;
 
-const allowedOrigins = ALLOWED_ORIGINS.split(',');
+const allowedOrigins = [
+    'https://flashpoint.twilightparadox.com',
+    'http://localhost:3000',
+];
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
