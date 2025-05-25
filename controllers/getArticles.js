@@ -5,6 +5,8 @@ const NEWS_API_KEY = process.env.NEWS_API_KEY;
 module.exports = (req, res, next) => {
     const { q } = req.query;
 
+    console.log(q)
+
     axios.get('https://newsapi.org/v2/everything', {
         params: {
             q,
@@ -25,5 +27,5 @@ module.exports = (req, res, next) => {
                 isSaved: false,
             }));
         res.send({ articles });
-    }).catch(next)
+    }).catch(next);
 };
